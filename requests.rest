@@ -1,0 +1,45 @@
+POST http://localhost:3000/item
+Content-Type: application/json
+
+{
+    "id": 20,
+    "name": "Test User"
+}
+
+###
+
+POST http://localhost:3000/item
+Content-Type: application/json
+
+{
+    "id": null,
+    "name": "User with randomly generated ID"
+}
+
+###
+
+GET http://localhost:3000/items
+Content-Type: application/json
+
+###
+
+PUT http://localhost:3000/item/931
+Content-Type: application/json
+
+{
+    "newName": "updated user"
+}
+
+###
+
+DELETE http://localhost:3000/item
+Content-Type: application/json
+
+{
+    "id": 982
+}
+
+###
+
+GET http://localhost:3000/metrics
+Content-Type: application/json

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@astrajs/rest": "^0.3.4",
+    "cassandra-driver": "^4.7.2",
+    "express": "^4.21.1",
+    "uuid": "^11.0.2"
+  }
+}

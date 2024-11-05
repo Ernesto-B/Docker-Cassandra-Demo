@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - CASSANDRA_HOST=cassandra
+      - PORT=3000
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - cassandra
+
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    ports:
+      - "9042:9042"   # Default port for Cassandra
+    environment:
+      - CASSANDRA_START_RPC=true
+    volumes:
+      - cassandra_data:/var/lib/cassandra  # Adding a named volume for locally persistent DB
+
+volumes:
+  cassandra_data:  # Defining the named volume
